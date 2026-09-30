@@ -1,0 +1,43 @@
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: clamp(20px, 4vw, 36px); box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 22px; }
+.progress { display: flex; gap: 6px; }
+.progress i { flex: 1; height: 6px; border-radius: 9px; background: var(--line); transition: background 0.3s ease; }
+.progress i.on { background: var(--teal); }
+
+.question { border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.question legend { display: flex; flex-direction: column; gap: 6px; padding: 0; margin-bottom: 18px; }
+.count { font-size: 13px; font-weight: 600; color: var(--ink-soft); }
+.title { font-size: clamp(1.6rem, 4vw, 2.1rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
+.hint { font-size: 14.5px; color: var(--ink-soft); }
+
+.options { display: flex; flex-direction: column; gap: 10px; }
+.gridOptions { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.option { display: flex; align-items: center; justify-content: space-between; gap: 12px; text-align: left; font: inherit; font-weight: 600; color: var(--ink); background: var(--mist); border: 1.5px solid var(--line); border-radius: 14px; padding: 15px 16px; cursor: pointer; transition: border-color 0.15s ease, background 0.15s ease; }
+.gridOptions .option { justify-content: center; }
+.option:hover { border-color: var(--teal); }
+.option[aria-pressed="true"] { border-color: var(--teal); background: var(--teal-wash); }
+.optionText { display: flex; flex-direction: column; }
+.optionText small { font-weight: 400; font-size: 13.5px; color: var(--ink-soft); }
+.tick { width: 22px; height: 22px; flex: none; border: 1.5px solid var(--line); border-radius: 6px; display: grid; place-items: center; background: var(--card); color: #fff; }
+.option[aria-pressed="true"] .tick { background: var(--teal); border-color: var(--teal); }
+
+.nav { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+
+.results { display: flex; flex-direction: column; gap: 18px; }
+.resultsTitle { font-size: clamp(1.8rem, 4.5vw, 2.4rem); }
+.resultsTitle :global(.hand) { font-size: 1.3em; line-height: 0.8; }
+.resultList { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.resultList li { border: 1.5px solid var(--line); border-radius: 16px; padding: 16px 18px; display: flex; flex-direction: column; gap: 8px; }
+.resultList li.best { border: 2px solid var(--teal); background: var(--teal-wash); }
+.resultHead { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.resultHead b { font-size: 1.1rem; }
+.why { font-size: 14.5px; color: var(--ink-soft); }
+.meta { display: flex; gap: 16px; flex-wrap: wrap; font-size: 15px; }
+.dealRow { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.deal { font-weight: 600; color: var(--coral-deep); font-size: 14.5px; }
+
+.email { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+.email :global(.hand) { font-size: 26px; line-height: 1; }
+.emailRow { display: flex; gap: 8px; flex-wrap: wrap; }
+.emailRow input { flex: 1 1 200px; min-width: 0; font: inherit; padding: 9px 12px; border-radius: 10px; border: 1.5px solid var(--sun-edge); background: #fffdf3; color: var(--ink); }
+
+@media (max-width: 520px) { .gridOptions { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; } .gridOptions .option { padding: 12px 4px; } }

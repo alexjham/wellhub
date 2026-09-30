@@ -1,0 +1,62 @@
+.hero { padding-block: clamp(40px, 7vw, 88px) clamp(40px, 6vw, 72px); }
+.heroGrid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 64px); align-items: center; }
+.heroCopy { display: flex; flex-direction: column; gap: 22px; }
+.heroCopy h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); font-weight: 700; letter-spacing: -0.035em; line-height: 1.02; }
+.heroCopy h1 :global(.hand) { font-size: 1.25em; line-height: 0.8; }
+.lead { font-size: 1.15rem; max-width: 52ch; color: var(--ink-soft); }
+.ctaRow { display: flex; gap: 12px; flex-wrap: wrap; }
+.trust { list-style: none; margin: 0; padding: 0; display: flex; gap: 18px; flex-wrap: wrap; font-size: 14.5px; font-weight: 600; }
+.trust li { display: inline-flex; align-items: center; gap: 6px; }
+.trust svg { color: var(--teal); }
+
+/* Fridge board */
+.board { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 22px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 16px; }
+.boardTitle { font-weight: 700; font-size: 14px; color: var(--ink-soft); }
+.week { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; text-align: center; font-size: 13px; }
+.week li { border: 1px solid var(--line); border-radius: 10px; padding: 10px 2px; background: var(--mist); display: flex; flex-direction: column; gap: 2px; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.week li span { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-soft); }
+.week .dayPicked { background: var(--sun); border-color: var(--sun-edge); transform: rotate(-2deg); font-weight: 600; }
+.boardNote { display: flex; flex-direction: column; gap: 4px; align-self: flex-start; margin-left: 12px; }
+.boardNote :global(.hand) { font-size: 26px; line-height: 1; }
+
+.h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); margin-block: 72px 22px; }
+.rowHead { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.rowHead a { font-weight: 600; }
+
+.steps { list-style: none; counter-reset: step; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.steps li { counter-increment: step; display: flex; flex-direction: column; gap: 6px; padding-top: 18px; border-top: 2px solid var(--ink); }
+.steps li::before { content: counter(step); font-family: var(--font-hand); font-size: 34px; line-height: 1; color: var(--coral); }
+.steps b { font-size: 1.15rem; }
+.steps span { color: var(--ink-soft); }
+
+.diets { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.diets a { display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px; border-radius: 999px; background: var(--card); border: 1.5px solid var(--line); color: var(--ink); text-decoration: none; font-weight: 600; transition: border-color 0.2s ease, background 0.2s ease; }
+.diets a:hover { border-color: var(--teal); background: var(--teal-wash); color: var(--ink); }
+.diets svg { color: var(--teal); }
+
+.listings { list-style: none; margin: 0; padding: 0; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); }
+.listing { display: grid; grid-template-columns: minmax(0, 1.4fr) auto minmax(0, 0.8fr) minmax(0, 1.3fr) auto; gap: 16px; align-items: center; padding: 18px 20px; border-bottom: 1px solid var(--line); }
+.listing:last-child { border-bottom: 0; }
+.listingName { display: flex; flex-direction: column; min-width: 0; }
+.listingName b { font-size: 1.08rem; }
+.listingDeal { font-weight: 600; color: var(--coral-deep); }
+
+.deals { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.deals li { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+.dealOffer { font-size: 1.2rem; font-weight: 700; line-height: 1.25; flex: 1; }
+
+.trustBlock { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 40px; align-items: end; }
+.trustBlock > div { display: flex; flex-direction: column; gap: 12px; max-width: 60ch; }
+.signup { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; transform: rotate(1deg); }
+.signup :global(.hand) { font-size: 28px; line-height: 1; }
+
+@media (max-width: 900px) {
+  .heroGrid, .trustBlock { grid-template-columns: minmax(0, 1fr); }
+  .listing { grid-template-columns: minmax(0, 1fr) auto; }
+  .listingDeal { grid-column: 1 / -1; }
+}
+@media (max-width: 640px) {
+  .steps, .deals { grid-template-columns: minmax(0, 1fr); }
+  .week { font-size: 11px; gap: 4px; }
+  .h2 { margin-top: 56px; }
+}
