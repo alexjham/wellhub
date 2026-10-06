@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import ArticleBody from "../../components/ArticleBody";
 import JsonLd from "../../components/JsonLd";
-import { allGuides, getGuide, getAuthorByName, getBrand } from "../../lib/content";
+import { allGuides, getGuide, reviewerOf, getBrand } from "../../lib/content";
 import { abs, breadcrumbLd, SITE_NAME } from "../../lib/site";
 import s from "../../components/article.module.css";
 
@@ -31,7 +31,7 @@ export default async function GuidePage({ params }) {
   const { slug } = await params;
   const g = getGuide(slug);
   if (!g) notFound();
-  const author = getAuthorByName(g.author);
+  const reviewer = reviewerOf(g);
   const brands = g.brands.map(getBrand).filter(Boolean);
 
   const article = {
@@ -42,7 +42,8 @@ export default async function GuidePage({ params }) {
     image: g.image ? [abs(g.image)] : undefined,
     datePublished: g.published,
     dateModified: g.modified || g.published,
-    author: author ? { "@type": "Person", name: author.name, url: abs(`/people/${author.slug}`) } : g.author ? { "@type": "Person", name: g.author } : undefined,
+    author: { "@type": "Organization", name: SITE_NAME, url: abs("/") },
+    reviewedBy: reviewer ? { "@type": "Person", name: reviewer.name, jobTitle: reviewer.credential, url: abs(`/people/${reviewer.slug}`) } : undefined,
     publisher: { "@type": "Organization", name: SITE_NAME, url: abs("/") },
     mainEntityOfPage: abs(`/${slug}`),
   };
@@ -56,12 +57,15 @@ export default async function GuidePage({ params }) {
       <header className={s.head}>
         <h1>{g.title}</h1>
         <div className={s.byline}>
-          {author?.photo && <img src={author.photo} alt="" width="44" height="44" className={s.avatar} />}
+          {reviewer?.photo && <img src={reviewer.photo} alt="" width="44" height="44" className={s.avatar} />}
           <div>
-            {author ? <Link href={`/people/${author.slug}`}>{author.name}</Link> : g.author && <span>{g.author}</span>}
+            {reviewer && (
+              <>
+                Reviewed by <Link href={`/people/${reviewer.slug}`}>{reviewer.name}</Link>, {reviewer.credential}
+              </>
+            )}
             <span className="muted">
-              {g.published && ` · Published ${fmt(g.published)}`}
-              {g.modified && g.modified.slice(0, 10) !== g.published?.slice(0, 10) && ` · Updated ${fmt(g.modified)}`}
+              {reviewer && g.reviewedOn ? ` · ${fmt(g.reviewedOn)}` : g.modified ? `Updated ${fmt(g.modified)}` : g.published ? `Published ${fmt(g.published)}` : ""}
             </span>
           </div>
         </div>

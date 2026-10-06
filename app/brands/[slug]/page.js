@@ -6,7 +6,7 @@ import Rating from "../../../components/Rating";
 import Faq from "../../../components/Faq";
 import JsonLd from "../../../components/JsonLd";
 import { Arrow } from "../../../components/Icons";
-import { allBrands, getBrand, TYPE_LABEL, DIET_WORDS, getAuthorByName } from "../../../lib/content";
+import { allBrands, getBrand, TYPE_LABEL, DIET_WORDS, reviewerOf } from "../../../lib/content";
 import { abs, breadcrumbLd, faqLd, YEAR } from "../../../lib/site";
 import s from "../../../components/brand.module.css";
 
@@ -123,12 +123,12 @@ export default async function BrandPage({ params }) {
           <h2 id="reviews-title">Our {b.name} reviews</h2>
           <ul className={s.reviews}>
             {b.reviews.map((g) => {
-              const a = getAuthorByName(g.author);
+              const a = reviewerOf(g);
               return (
                 <li key={g.slug}>
                   <Link href={`/${g.slug}`}>
                     <b>{g.title}</b>
-                    <span className="muted">{a ? `By ${a.name}` : g.author}{g.modified ? ` · Updated ${new Date(g.modified).toLocaleDateString("en-AU", { month: "long", year: "numeric" })}` : ""}</span>
+                    <span className="muted">{a ? `Reviewed by ${a.name}` : "WellHub"}{g.modified ? ` · Updated ${new Date(g.modified).toLocaleDateString("en-AU", { month: "long", year: "numeric" })}` : ""}</span>
                   </Link>
                 </li>
               );

@@ -1,25 +1,5 @@
 [
  {
-  "slug": "lauren",
-  "name": "Lauren Parchi",
-  "bio": [
-   "Lauren is a qualified clinical nutritionist (BHSc) who has a strong passion for making nutrition easy and accessible for everyone. Lauren uses evidence-based research to inform her content and always aims to distil the latest information, so it is simple and clear for consumers.",
-   "Lauren also has a passion for plant-based health after adopting a plant-based diet a number of years ago. She uses her experience and knowledge in this area to educate others through recipes and evidence-based content.",
-   "Lauren has a comprehensive understanding of clinical nutrition and aims to create content that educates and inspires others to make a positive difference to their health."
-  ],
-  "photo": "/people/lauren.webp"
- },
- {
-  "slug": "rose",
-  "name": "Rose Fenasse",
-  "bio": [
-   "Rose is a nutritionist who believes nutritional approaches should be flexible and sustainable for the long-term. Rose’s approach to nutrition is evidence-based and integrative, as she understands her scope of practice and sees value in working alongside other health professionals to compliment her clients most effectively.",
-   "Rose is passionate about ditching diet cultures and focusing on label-free living, whilst educating clients on how to create healthy and flavour-packed meals.",
-   "She has a comprehensive understanding of shaping nutritional interventions, meal plans, dietary analysis, whilst coaching clients around ditching diet cultures and embracing all foods without the associated emotional fears often seen with dietary changes. Rose stays up to date with current research looking to science and evidence-based nutritional medicine whilst continually studying to broaden her scope."
-  ],
-  "photo": "/people/rose.webp"
- },
- {
   "slug": "alex",
   "name": "Alex Hamlin",
   "bio": [
@@ -28,55 +8,7 @@
    "With evidence-based practices, Alex offers personalised guidance to help individuals reach their health goals, prioritising health at the forefront.",
    "In health content creation, Alex delivers concise, informative, and engaging material rooted in evidence-based practices, educating, inspiring and guiding others on their wellness journey."
   ],
-  "photo": "/people/alex.webp"
- },
- {
-  "slug": "holly",
-  "name": "Holly Martin",
-  "bio": [],
-  "photo": null
- },
- {
-  "slug": "alex-rutkowska",
-  "name": "Alex Rutkowska",
-  "bio": [
-   "Alex runs a blog called Checklabels.com.au where she helps everyone to better understand and find the truth about the foods we eat.",
-   "She has also been working in a pharmacy since 2011, providing dietary advice to customers."
-  ],
-  "photo": "/people/alex-rutkowska.webp"
- },
- {
-  "slug": "sheradyn",
-  "name": "Sheradyn Dekker",
-  "bio": [
-   "A Qualified Gut & Hormone Nutritionist, with a Masters in Nutrition and Postgraduate studies in Functional Diagnostic Nutrition, Sheradyn not only has the “head” knowledge but also has experienced symptoms first hand. Having spent years battling chronic IBS, bloating, missing periods, adult acne & food intolerances, she now educates women on how to address the underlying cause of these symptoms.",
-   "My goal is to educate and inspire people to listen to their bodies, acknowledge stress and not just treat their symptoms with medications. I practise as a Functional Nutritionist, running Labs such as stool testing, hormone tests, leaky gut and liver markers, all looking for underlying imbalances in your body that may appear as “unconnected” symptoms."
-  ],
-  "photo": "/people/sheradyn.webp"
- },
- {
-  "slug": "zola",
-  "name": "Zola Johnson",
-  "bio": [
-   "Z. Johnson is a Registered Nutritionist and Cosmetologist. She has been an advocate for healthy nutrition, beauty and lifestyle for more than 5 years. Z. Johnson is also dedicated to motivate and empower people to strive towards a better version of their wellbeing. She is passionate about educating people on self-care, sharing experiences and best tips to achieve healthier lifestyle goals."
-  ],
-  "photo": "/people/zola.webp"
- },
- {
-  "slug": "corinne",
-  "name": "Corinne Blight",
-  "bio": [
-   "Corinne Blight is the Founder of Limitless Fitness & Nutrition, an online and live group-fitness community that aims to make fitness and nutrition exciting, fun & energetic! As well as being a Group Fitness Instructor, Corinne is also a Personal Trainer, Pilates Instructor, Nutrition & Health Presenter and Nutrition Coach.",
-   "Corinne has been working in the fitness industry for over 7 years and has worked with companies including Paramount Pictures, Nickelodeon/ MTV and Western Sydney University as well as helped hundreds of people to reach their health and nutrition goals! Corinne is passionate about making fitness & nutrition FUN, light-hearted and exciting. When you step into one of her classes, you can expect to sweat, smile and leave with lots of feel-good endorphins! You will be left feeling #limitless, that’s for sure!"
-  ],
-  "photo": "/people/corinne.webp"
- },
- {
-  "slug": "ariana",
-  "name": "Ariana Karamountzos",
-  "bio": [
-   "Ariana is a dietitian at Be Fit Food working in product development and provides consultations to customers."
-  ],
-  "photo": null
+  "photo": "/people/alex.webp",
+  "credential": "Nutritionist (BHSc)"
  }
 ]
