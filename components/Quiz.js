@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { matchListings } from "../lib/match";
 import Rating from "./Rating";
 import CopyCode from "./CopyCode";
+import AddToWeek from "./AddToWeek";
 import { Arrow, Check } from "./Icons";
 import s from "./quiz.module.css";
 
@@ -186,6 +187,7 @@ function Results({ answers, onEdit, onRestart }) {
                   Go to site <Arrow size={16} />
                 </a>
               )}
+              <AddToWeek id={l.id} />
             </div>
           </li>
         ))}
@@ -201,6 +203,10 @@ function Results({ answers, onEdit, onRestart }) {
         </div>
         {message && <p className={s.hint} role="status">{message}</p>}
       </form>
+
+      <p className={s.hint}>
+        Add your favourites to <a href="/my-week">My week</a> to plan your dinners and see the weekly cost.
+      </p>
 
       <div className={s.nav}>
         <button type="button" className="btn btn-quiet" onClick={onEdit}>Change answers</button>

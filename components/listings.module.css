@@ -23,10 +23,11 @@
 .deal { display: flex; flex-direction: column; gap: 6px; align-items: flex-start; min-width: 0; }
 .offer { font-weight: 600; color: var(--coral-deep); font-size: 14.5px; line-height: 1.35; }
 .go { white-space: nowrap; }
+.actions { display: flex; flex-direction: column; gap: 8px; align-items: stretch; }
 
 @media (max-width: 860px) {
   .row { grid-template-columns: minmax(0, 1fr) auto; gap: 10px 16px; }
   .facts { align-items: flex-end; text-align: right; }
   .deal { grid-column: 1 / -1; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 10px; }
-  .go { grid-column: 1 / -1; justify-self: start; }
+  .actions { grid-column: 1 / -1; flex-direction: row; flex-wrap: wrap; }
 }

@@ -1,6 +1,7 @@
 import Rating from "./Rating";
 import CopyCode from "./CopyCode";
 import { Arrow } from "./Icons";
+import AddToWeek from "./AddToWeek";
 import s from "./listings.module.css";
 
 const TYPE_LABEL = { ready: "Ready-made", kit: "Meal kit", box: "Food box", baby: "Baby & toddler", supp: "Supplement" };
@@ -22,11 +23,14 @@ export default function ListingRow({ l }) {
         {l.deal && <span className={s.offer}>{l.deal}</span>}
         {l.code && <CopyCode code={l.code} />}
       </div>
-      {l.url ? (
-        <a className={`btn btn-small ${s.go}`} href={l.url} target="_blank" rel="sponsored nofollow noopener">
-          Go to site <Arrow size={16} />
-        </a>
-      ) : <span />}
+      <div className={s.actions}>
+        {l.url && (
+          <a className={`btn btn-small ${s.go}`} href={l.url} target="_blank" rel="sponsored nofollow noopener">
+            Go to site <Arrow size={16} />
+          </a>
+        )}
+        {(l.type === "ready" || l.type === "kit") && <AddToWeek id={l.id} />}
+      </div>
     </li>
   );
 }

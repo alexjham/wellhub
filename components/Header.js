@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Magnet } from "./Icons";
+import WeekLink from "./WeekLink";
 
 export default function Header() {
   return (
@@ -19,6 +20,7 @@ export default function Header() {
             <Link className="nav-link" href="/supplements">Supplements</Link>
             <Link className="nav-link nav-keep" href="/deals">Deals</Link>
             <Link className="nav-link" href="/guides">Guides</Link>
+            <WeekLink className="nav-link nav-keep" />
             <Link href="/quiz" className="btn btn-small">Find my match</Link>
           </nav>
         </div>
