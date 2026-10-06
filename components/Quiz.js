@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
-const STATES = ["NSW", "VIC", "ACT", "QLD", "NT", "SA", "WA", "TAS"];
 import { matchListings } from "../lib/match";
 import Rating from "./Rating";
 import CopyCode from "./CopyCode";
@@ -43,10 +42,6 @@ const QUESTIONS = [
       ["two", "Two of us", ""],
       ["family", "Family of 3 or more", "We'll favour family-size kits"],
     ],
-  },
-  {
-    key: "state", title: "Where do you live?", hint: "So we only show services that deliver to you", grid: true,
-    options: STATES.map((st) => [st, st, ""]),
   },
 ];
 
@@ -166,7 +161,7 @@ function Results({ answers, onEdit, onRestart }) {
       )}
       {!results.length && (
         <p>
-          No service we list matches every need in {answers.state} yet. Try removing one diet need, or check back soon as we add new services every month.
+          No service we list matches all of those needs yet. Try removing one diet need, or check back soon as we add new services every month.
         </p>
       )}
       <ol className={s.resultList}>
@@ -182,6 +177,7 @@ function Results({ answers, onEdit, onRestart }) {
               <Rating value={l.rating} />
               <span>{l.type === "kit" ? "Meal kit" : "Ready-made"}</span>
             </div>
+            <p className={s.why}>Delivers to {l.states.length === 8 ? "all states" : l.states.join(", ")}</p>
             <div className={s.dealRow}>
               {l.code && <CopyCode code={l.code} />}
               {l.deal && <span className={s.deal}>{l.deal}</span>}

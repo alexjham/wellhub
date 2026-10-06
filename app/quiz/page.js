@@ -3,7 +3,7 @@ import Quiz from "../../components/Quiz";
 
 export const metadata = {
   title: "Find my match",
-  description: "Answer 5 quick questions to get your top 3 Australian meal delivery services and meal kits, each with a discount code.",
+  description: "Answer 4 quick questions to get your top 3 Australian meal delivery services and meal kits, each with a discount code.",
 };
 
 export default function QuizPage() {

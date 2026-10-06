@@ -13,6 +13,7 @@ export default function SupplementsPage() {
       hand="compared"
       intro="Vitamin subscriptions, protein powder and greens powder. Supplements don't replace a balanced diet; talk to your GP or pharmacist if you take medicines."
       items={listingsFor((l) => l.type === "supp")}
+      links={[{ href: "/supplements", label: "All supplements", current: true }, { href: "/supplements/creatine", label: "Creatine", isNew: true }]}
     />
   );
 }

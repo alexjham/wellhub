@@ -26,7 +26,7 @@ export default function Home() {
               for the week.
             </h1>
             <p className={s.lead}>
-              Compare Australian meal delivery services and meal kits, rated by a qualified nutritionist. Answer 5 quick questions and get your top 3, with a discount code for each.
+              Compare Australian meal delivery services and meal kits, rated by a qualified nutritionist. Answer 4 quick questions and get your top 3, with a discount code for each.
             </p>
             <div className={s.ctaRow}>
               <Link href="/quiz" className="btn">
@@ -65,7 +65,7 @@ export default function Home() {
       <section className="wrap">
         <h2 className={s.h2}>How it works</h2>
         <ol className={s.steps}>
-          <li><b>Answer 5 questions</b><span>Your goal, how you like to eat, any diet needs, who you're feeding and where you live.</span></li>
+          <li><b>Answer 4 questions</b><span>Your goal, how you like to eat, any diet needs and who you're feeding.</span></li>
           <li><b>Get your top 3</b><span>Matched to your answers and ranked by our nutritionist's rating, not by who pays us most.</span></li>
           <li><b>Grab your code</b><span>Every match comes with the best discount we have, most of them exclusive to WellHub.</span></li>
         </ol>
