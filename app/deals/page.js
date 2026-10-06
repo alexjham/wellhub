@@ -2,7 +2,8 @@ import { deals } from "../../lib/deals";
 import DealsList from "../../components/DealsList";
 
 export const metadata = {
-  title: "Discount codes & deals",
+  alternates: { canonical: "/deals" },
+  title: "Meal Delivery Discount Codes & Deals (October 2026)",
   description: "Current discount codes for Australian meal delivery, meal kits and supplements, most of them exclusive to WellHub.",
 };
 

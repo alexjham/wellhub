@@ -2,7 +2,8 @@ import CategoryPage from "../../components/CategoryPage";
 import { listingsFor } from "../../lib/diets";
 
 export const metadata = {
-  title: "Fruit, veg & meat boxes",
+  alternates: { canonical: "/food-boxes" },
+  title: "Fruit, Veg & Meat Box Delivery Australia (2026)",
   description: "Compare Australian fruit and veg boxes, meat boxes and snack boxes delivered to your door.",
 };
 

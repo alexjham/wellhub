@@ -16,7 +16,9 @@
 .row { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.8fr) minmax(0, 1.4fr) auto; gap: 18px; align-items: center; padding: 18px 20px; border-bottom: 1px solid var(--line); }
 .row:last-child { border-bottom: 0; }
 .name { display: flex; flex-direction: column; min-width: 0; }
-.name b { font-size: 1.08rem; }
+.name b, .title { font-size: 1.08rem; font-weight: 700; }
+.title { color: var(--ink); text-decoration: none; }
+.title:hover { color: var(--teal); text-decoration: underline; }
 .name span { color: var(--ink-soft); font-size: 14.5px; }
 .name .states { font-size: 13px; }
 .facts { display: flex; flex-direction: column; gap: 2px; }

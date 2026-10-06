@@ -2,7 +2,8 @@ import CategoryPage from "../../components/CategoryPage";
 import { listingsFor } from "../../lib/diets";
 
 export const metadata = {
-  title: "Supplements",
+  alternates: { canonical: "/supplements" },
+  title: "Vitamin Subscriptions, Protein & Greens Powder Australia (2026)",
   description: "Compare vitamin subscriptions, protein powder and greens powder in Australia, reviewed by a qualified nutritionist.",
 };
 

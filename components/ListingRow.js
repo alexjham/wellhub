@@ -2,6 +2,7 @@ import Rating from "./Rating";
 import CopyCode from "./CopyCode";
 import { Arrow } from "./Icons";
 import AddToWeek from "./AddToWeek";
+import Link from "next/link";
 import s from "./listings.module.css";
 
 const TYPE_LABEL = { ready: "Ready-made", kit: "Meal kit", box: "Food box", baby: "Baby & toddler", supp: "Supplement" };
@@ -11,7 +12,7 @@ export default function ListingRow({ l }) {
   return (
     <li className={s.row}>
       <div className={s.name}>
-        <b>{l.brand}</b>
+        {l.brandSlug ? <Link href={`/brands/${l.brandSlug}/${l.id}`} className={s.title}>{l.brand}</Link> : <b>{l.brand}</b>}
         <span>{[l.name, TYPE_LABEL[l.type]].filter(Boolean).join(" · ")}</span>
         <span className={s.states}>Delivers to {states}</span>
       </div>

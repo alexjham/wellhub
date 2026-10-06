@@ -7,6 +7,8 @@ import HeroPlayer from "../components/HeroPlayer";
 import CopyCode from "../components/CopyCode";
 import { Arrow, Check } from "../components/Icons";
 
+export const metadata = { alternates: { canonical: "/" } };
+
 export default function Home() {
   const featured = ["soulara-vegan-meals", "hellofresh-vegan-meal-kit", "marley-spoon-meal-kit"];
   const topRated = featured.map((id) => catalogue.find((l) => l.id === id)).filter(Boolean);

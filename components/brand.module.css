@@ -1,0 +1,25 @@
+.crumbs { font-size: 14px; color: var(--ink-soft); padding-top: 28px; display: flex; gap: 8px; flex-wrap: wrap; }
+.crumbs a { color: var(--ink-soft); }
+.head { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 40px; align-items: start; padding-block: 24px 12px; }
+.headText { display: flex; flex-direction: column; gap: 14px; }
+.headText h1 { font-size: clamp(2rem, 4.4vw, 3.1rem); letter-spacing: -0.03em; }
+.logo { width: auto; max-width: 180px; height: 56px; object-fit: contain; object-position: left; }
+.facts { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 15px; }
+.facts li { display: inline-flex; gap: 6px; align-items: center; }
+.intro { font-size: 1.08rem; color: var(--ink-soft); max-width: 66ch; }
+.dealNote { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; justify-self: end; max-width: 340px; margin-top: 20px; }
+.dealNote :global(.hand) { font-size: 26px; line-height: 1; }
+.codeRow { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; }
+.section { margin-top: 56px; display: flex; flex-direction: column; gap: 16px; }
+.section h2 { font-size: clamp(1.5rem, 3vw, 1.9rem); }
+.list { list-style: none; margin: 0; padding: 0; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); }
+.reviews { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.reviews a { display: flex; flex-direction: column; gap: 4px; padding: 16px 18px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); text-decoration: none; color: var(--ink); height: 100%; }
+.reviews a:hover { border-color: var(--teal); }
+.reviews span { font-size: 14px; }
+.fine { margin-top: 32px; font-size: 13.5px; color: var(--ink-soft); max-width: 80ch; }
+@media (max-width: 860px) {
+  .head { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .dealNote { justify-self: start; margin-top: 0; }
+  .reviews { grid-template-columns: minmax(0, 1fr); }
+}

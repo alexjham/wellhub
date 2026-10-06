@@ -2,7 +2,8 @@ import { Suspense } from "react";
 import Quiz from "../../components/Quiz";
 
 export const metadata = {
-  title: "Find my match",
+  alternates: { canonical: "/quiz" },
+  title: "Find Your Meal Delivery Match: 4-Question Quiz",
   description: "Answer 4 quick questions to get your top 3 Australian meal delivery services and meal kits, each with a discount code.",
 };
 

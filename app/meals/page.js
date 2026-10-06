@@ -2,7 +2,8 @@ import CategoryPage from "../../components/CategoryPage";
 import { listingsFor } from "../../lib/diets";
 
 export const metadata = {
-  title: "Ready-made meal delivery",
+  alternates: { canonical: "/meals" },
+  title: "Ready-Made Meal Delivery Australia (2026): Compare Prices & Ratings",
   description: "Compare Australian ready-made meal delivery services by price per serve, nutritionist rating and diet.",
 };
 

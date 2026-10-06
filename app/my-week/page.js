@@ -3,7 +3,8 @@ import WeekBuilder from "../../components/WeekBuilder";
 import { catalogue } from "../../lib/diets";
 
 export const metadata = {
-  title: "My week",
+  alternates: { canonical: "/my-week" },
+  title: "Build Your Week: Dinner Planner & Cost Calculator",
   description: "Plan a week of dinners from your saved meal delivery picks and see the weekly cost for your household.",
 };
 

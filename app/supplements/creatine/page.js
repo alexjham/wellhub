@@ -2,7 +2,8 @@ import CategoryPage from "../../../components/CategoryPage";
 import s from "../../../components/category.module.css";
 
 export const metadata = {
-  title: "Creatine",
+  alternates: { canonical: "/supplements/creatine" },
+  title: "Best Creatine Australia (2026): Compared by a Nutritionist",
   description: "Compare creatine supplements in Australia, reviewed by a qualified nutritionist.",
 };
 

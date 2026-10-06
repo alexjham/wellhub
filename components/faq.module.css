@@ -1,0 +1,8 @@
+.faq { display: flex; flex-direction: column; gap: 10px; max-width: 760px; }
+.faq h2 { font-size: clamp(1.5rem, 3vw, 1.9rem); margin-bottom: 8px; }
+.item { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 0 18px; }
+.item summary { cursor: pointer; font-weight: 600; padding: 15px 0; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+.item summary::-webkit-details-marker { display: none; }
+.item summary::after { content: "+"; color: var(--teal); font-weight: 700; font-size: 1.2rem; line-height: 1; }
+.item[open] summary::after { content: "–"; }
+.item p { padding-bottom: 16px; color: var(--ink-soft); max-width: 68ch; }
