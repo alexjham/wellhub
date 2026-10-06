@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { STATES } from "../lib/listings";
+const STATES = ["NSW", "VIC", "ACT", "QLD", "NT", "SA", "WA", "TAS"];
 import { matchListings } from "../lib/match";
 import Rating from "./Rating";
 import CopyCode from "./CopyCode";
@@ -173,7 +173,7 @@ function Results({ answers, onEdit, onRestart }) {
         {results.map((l, i) => (
           <li key={l.id} className={i === 0 ? s.best : undefined}>
             <div className={s.resultHead}>
-              <b>{l.brand} – {l.name}</b>
+              <b>{l.name ? `${l.brand} – ${l.name}` : l.brand}</b>
               {i === 0 && <span className="pill">Best match</span>}
             </div>
             <p className={s.why}>Why: {l.why.length ? l.why.slice(0, 3).join(" · ") : "strong rating for the price"}</p>
@@ -183,8 +183,13 @@ function Results({ answers, onEdit, onRestart }) {
               <span>{l.type === "kit" ? "Meal kit" : "Ready-made"}</span>
             </div>
             <div className={s.dealRow}>
-              {l.code ? <CopyCode code={l.code} /> : <span className={s.hint}>Deal applied by link</span>}
-              <span className={s.deal}>{l.deal}</span>
+              {l.code && <CopyCode code={l.code} />}
+              {l.deal && <span className={s.deal}>{l.deal}</span>}
+              {l.url && (
+                <a className="btn btn-small" href={l.url} target="_blank" rel="sponsored nofollow noopener">
+                  Go to site <Arrow size={16} />
+                </a>
+              )}
             </div>
           </li>
         ))}

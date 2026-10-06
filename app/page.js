@@ -1,27 +1,18 @@
 import Link from "next/link";
 import s from "./home.module.css";
-import { listings, deals } from "../lib/listings";
+import { deals } from "../lib/deals";
+import { catalogue, DIETS } from "../lib/diets";
 import Rating from "../components/Rating";
 import CopyCode from "../components/CopyCode";
 import { Arrow, Check } from "../components/Icons";
-
-const DIETS = [
-  { label: "Weight loss", q: "goal=lose" },
-  { label: "High protein", q: "goal=muscle" },
-  { label: "Vegan", q: "diet=vegan" },
-  { label: "Vegetarian", q: "diet=veg" },
-  { label: "Gluten free", q: "diet=gf" },
-  { label: "Dairy free", q: "diet=df" },
-  { label: "Keto & low carb", q: "diet=keto" },
-  { label: "Halal", q: "diet=halal" },
-];
 
 const WEEK = [
   ["Mon", "Kit"], ["Tue", "Soulara"], ["Wed", "Kit"], ["Thu", "Soulara"], ["Fri", "Out"], ["Sat", "—"], ["Sun", "Plan"],
 ];
 
 export default function Home() {
-  const topRated = listings.filter((l) => l.rating === 5).slice(0, 3);
+  const featured = ["soulara-vegan-meals", "hellofresh-vegan-meal-kit", "marley-spoon-meal-kit"];
+  const topRated = featured.map((id) => catalogue.find((l) => l.id === id)).filter(Boolean);
   const featuredDeals = deals.slice(0, 3);
 
   return (
@@ -84,9 +75,11 @@ export default function Home() {
         <h2 className={s.h2}>Shop by diet</h2>
         <ul className={s.diets}>
           {DIETS.map((d) => (
-            <li key={d.label}>
-              <Link href={`/quiz?${d.q}`}>
-                {d.label} <Arrow size={16} />
+            <li key={d.slug}>
+              <Link href={`/diet/${d.slug}`}>
+                {d.label}
+                {d.isNew && <span className="pill">New</span>}
+                <Arrow size={16} />
               </Link>
             </li>
           ))}
@@ -103,12 +96,12 @@ export default function Home() {
             <li key={l.id} className={s.listing}>
               <div className={s.listingName}>
                 <b>{l.brand}</b>
-                <span className="muted">{l.name} · {l.type === "kit" ? "Meal kit" : "Ready-made"}</span>
+                <span className="muted">{[l.name, l.type === "kit" ? "Meal kit" : "Ready-made"].filter(Boolean).join(" · ")}</span>
               </div>
               <Rating value={l.rating} />
               <span><b className="num">${l.price.toFixed(2)}</b> <span className="muted">per serve</span></span>
               <span className={s.listingDeal}>{l.deal}</span>
-              {l.code ? <CopyCode code={l.code} /> : <span className="muted">Deal applied by link</span>}
+              {l.code ? <CopyCode code={l.code} /> : <span />}
             </li>
           ))}
         </ul>

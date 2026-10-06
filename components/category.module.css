@@ -1,0 +1,20 @@
+.crumbs { font-size: 14px; color: var(--ink-soft); padding-top: 28px; display: flex; gap: 8px; flex-wrap: wrap; }
+.crumbs a { color: var(--ink-soft); }
+.head { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 40px; align-items: center; padding-block: 24px 36px; }
+.headText { display: flex; flex-direction: column; gap: 14px; }
+.headText h1 { font-size: clamp(2.1rem, 4.6vw, 3.3rem); letter-spacing: -0.03em; }
+.headText h1 :global(.hand) { font-size: 1.15em; line-height: 0.8; white-space: nowrap; }
+.intro { font-size: 1.1rem; color: var(--ink-soft); max-width: 62ch; }
+.caution { font-size: 14.5px; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; max-width: 62ch; }
+.quizNote { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; justify-self: end; max-width: 320px; }
+.quizNote :global(.hand) { font-size: 25px; line-height: 1; }
+.diets { list-style: none; margin: 0 0 28px; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.diets a { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 999px; background: var(--card); border: 1.5px solid var(--line); color: var(--ink); text-decoration: none; font-weight: 600; font-size: 14.5px; }
+.diets a:hover { border-color: var(--teal); color: var(--ink); }
+.diets a[aria-current="page"] { background: var(--teal); border-color: var(--teal); color: #fff; }
+.newTag { background: var(--coral); color: #fff; font-size: 11px; font-weight: 700; padding: 1px 7px; border-radius: 999px; }
+.fine { margin-top: 28px; font-size: 13.5px; color: var(--ink-soft); max-width: 80ch; }
+@media (max-width: 860px) {
+  .head { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .quizNote { justify-self: start; }
+}

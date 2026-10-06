@@ -1,4 +1,4 @@
-import { deals } from "../../lib/listings";
+import { deals } from "../../lib/deals";
 import DealsList from "../../components/DealsList";
 
 export const metadata = {
