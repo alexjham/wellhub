@@ -41,3 +41,12 @@
 .emailRow input { flex: 1 1 200px; min-width: 0; font: inherit; padding: 9px 12px; border-radius: 10px; border: 1.5px solid var(--sun-edge); background: #fffdf3; color: var(--ink); }
 
 @media (max-width: 520px) { .gridOptions { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; } .gridOptions .option { padding: 12px 4px; } }
+
+/* Motion: one step slides in at a time; results rise in order. */
+.enter { animation: enter 0.38s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.rise { animation: rise 0.5s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.pop { animation: pop 0.45s cubic-bezier(0.16, 1, 0.3, 1) 0.45s both; }
+@keyframes enter { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes rise { from { opacity: 0; transform: translateY(18px) scale(0.98); } to { opacity: 1; transform: none; } }
+@keyframes pop { from { transform: scale(0.4); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .enter, .rise, .pop { animation: none; } }

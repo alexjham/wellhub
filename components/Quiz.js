@@ -92,7 +92,7 @@ export default function Quiz() {
           onRestart={() => { setAnswers({ needs: [] }); setStep(0); }}
         />
       ) : (
-        <fieldset className={s.question}>
+        <fieldset className={`${s.question} ${s.enter}`} key={step}>
           <legend>
             <span className={s.count}>Question {step + 1} of {QUESTIONS.length}</span>
             <span className={s.title}>{q.title}</span>
@@ -150,7 +150,7 @@ function Results({ answers, onEdit, onRestart }) {
   }
 
   return (
-    <div className={s.results} aria-live="polite">
+    <div className={`${s.results} ${s.enter}`} aria-live="polite">
       <h1 className={s.resultsTitle}>
         {results.length ? <>Your top {results.length}, <span className="hand">sorted</span></> : "No exact match yet"}
       </h1>
@@ -166,10 +166,10 @@ function Results({ answers, onEdit, onRestart }) {
       )}
       <ol className={s.resultList}>
         {results.map((l, i) => (
-          <li key={l.id} className={i === 0 ? s.best : undefined}>
+          <li key={l.id} className={`${s.rise} ${i === 0 ? s.best : ""}`} style={{ animationDelay: `${120 + i * 110}ms` }}>
             <div className={s.resultHead}>
               <b>{l.name ? `${l.brand} – ${l.name}` : l.brand}</b>
-              {i === 0 && <span className="pill">Best match</span>}
+              {i === 0 && <span className={`pill ${s.pop}`}>Best match</span>}
             </div>
             <p className={s.why}>Why: {l.why.length ? l.why.slice(0, 3).join(" · ") : "strong rating for the price"}</p>
             <div className={s.meta}>

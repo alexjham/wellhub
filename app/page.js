@@ -3,12 +3,9 @@ import s from "./home.module.css";
 import { deals } from "../lib/deals";
 import { catalogue, DIETS } from "../lib/diets";
 import Rating from "../components/Rating";
+import HeroPlayer from "../components/HeroPlayer";
 import CopyCode from "../components/CopyCode";
 import { Arrow, Check } from "../components/Icons";
-
-const WEEK = [
-  ["Mon", "Kit"], ["Tue", "Soulara"], ["Wed", "Kit"], ["Thu", "Soulara"], ["Fri", "Out"], ["Sat", "—"], ["Sun", "Plan"],
-];
 
 export default function Home() {
   const featured = ["soulara-vegan-meals", "hellofresh-vegan-meal-kit", "marley-spoon-meal-kit"];
@@ -41,24 +38,7 @@ export default function Home() {
             </ul>
           </div>
 
-          <div className={s.board} aria-label="Example week plan">
-            <p className={s.boardTitle}>This week</p>
-            <ol className={s.week}>
-              {WEEK.map(([day, meal]) => (
-                <li key={day} className={meal === "Soulara" ? s.dayPicked : undefined}>
-                  <span>{day}</span>
-                  {meal}
-                </li>
-              ))}
-            </ol>
-            <div className={`note ${s.boardNote}`}>
-              <span className="hand">Try this one!</span>
-              <strong>Soulara Vegan Meals</strong>
-              <span>
-                <span className="num">$10.90</span> per serve · <Rating value={5} />
-              </span>
-            </div>
-          </div>
+          <HeroPlayer />
         </div>
       </section>
 
